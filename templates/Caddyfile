@@ -1,6 +1,6 @@
 :8080 {
 
-  header_up X-Forwarded-Proto "https"
+  header X-Forwarded-Proto "https"
 
   log {
     output stdout
