@@ -1,6 +1,10 @@
-:80 {
+:8080 {
 
   header_up X-Forwarded-Proto "https"
+
+  log {
+    output stdout
+  }
 
   reverse_proxy ${upstream_url}
 }
