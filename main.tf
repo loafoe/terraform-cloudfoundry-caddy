@@ -40,4 +40,11 @@ resource "cloudfoundry_network_policy" "caddy_proxy" {
     protocol        = "tcp"
     port            = var.upstream_port
   }
+
+  policy {
+    source_app      = var.downstream_app_id
+    destination_app = cloudfoundry_app.caddy_proxy.id
+    protocol        = "tcp"
+    port            = "8080"
+  }
 }
