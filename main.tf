@@ -37,6 +37,6 @@ resource "cloudfoundry_network_policy" "caddy_proxy" {
     source_app      = cloudfoundry_app.caddy_proxy.id
     destination_app = var.upstream_app_id
     protocol        = "tcp"
-    port            = "3100"
+    port            = var.upstream_port
   }
 }

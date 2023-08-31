@@ -2,6 +2,11 @@ variable "upstream_app_id" {
   type = string
 }
 
+variable "upstream_port" {
+  type    = string
+  default = "8080"
+}
+
 variable "upstream_url" {
   type = string
 }
