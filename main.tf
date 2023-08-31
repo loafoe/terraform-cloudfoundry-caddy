@@ -18,6 +18,7 @@ resource "cloudfoundry_app" "caddy_proxy" {
 
   command           = "echo $CADDYFILE_BASE64 | base64 -d > /etc/caddy/Caddyfile && cat /etc/caddy/Caddyfile && caddy run --config /etc/caddy/Caddyfile"
   health_check_type = "process"
+  strategy          = "rolling"
 
   //noinspection HCLUnknownBlockType
   routes {
